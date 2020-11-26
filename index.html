@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./main.css">
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="column">
+            <div>
+                <span class="d-block" style="font-size: 1.5em">Conjunto A (Elementos separados por virgulas)</span>
+                <input class="d-block center" id="A" />
+                <span class="d-block" style="font-size: 1.5em">Conjunto B (Elementos separados por virgulas)</span>
+                <input class="d-block center" id="B" />
+                <button onclick="main()">Gerar Produto Cartesiano</button>
+            </div>
+            <br>
+            <div>
+                <h3 class="d-block">Operações:</h3>
+                <h1 class="d-inline">a</h1>
+                <select style="width: 15%;" id="operacoes-operador" class="d-inline">
+                    <option selected disabled>Escolha</option>
+                    <option>+</option>
+                    <option>-</option>
+                    <option>/</option>
+                    <option>*</option>
+                </select>
+                <h1 class="d-inline">b</h1>
+                <select style="width: 15%;" id="operacoes-relacao" class="d-inline">
+                    <option selected disabled>Escolha</option>
+                    <option>=</option>
+                    <option>≠</option>
+                    <option>></option>
+                    <option>
+                        <</option> </select> <input id="operacoes-valor" type="number" value="0" style="width: 5%;">
+                            <button onclick="operacoes()" class="d-block center">Adicionar relação</button>
+            </div>
+            <div>
+                <h3 class="d-block">Caracteristicas:</h3>
+                <div class="d-inline">
+                    <h1 class="d-inline">a</h1>
+                    <select style="width: 15%;" id="caracteristica-a" class="d-inline">
+                        <option selected disabled>Escolha</option>
+                        <option>é primo</option>
+                        <option>é par</option>
+                        <option>é impar</option>
+                        <option>divide b</option>
+                        <option>divide</option>
+                        <option>=</option>
+                        <option>≠</option>
+                        <option>></option>
+                        <option>
+                            <</option> </select> <input id="caracteristica-a-valor" type="number" value="0"
+                                style="width: 5%;">
+
+                                <select style="width: 15%;" id="caracteristica-eou" class="d-inline">
+                                    <option selected disabled>Escolha</option>
+                                    <option>E</option>
+                                    <option>OU</option>
+                                </select>
+
+                                <h1 class="d-inline">b</h1>
+                                <select style="width: 15%;" id="caracteristica-b" class="d-inline">
+                                    <option selected disabled>Escolha</option>
+                                    <option>é primo</option>
+                                    <option>é par</option>
+                                    <option>é impar</option>
+                                    <option>divide a</option>
+                                    <option>divide</option>
+                                    <option>=</option>
+                                    <option>≠</option>
+                                    <option>></option>
+                                    <option>
+                                        <</option> </select> <input id="caracteristica-b-valor" type="number" value="0"
+                                            style="width: 5%;">
+                </div>
+                <button onclick="caracteristicas()" class="d-block center">Adicionar relação</button>
+            </div>
+        </div>
+        <div class="column">
+            <h1 class="d-inline">Resultados</h1>
+            <button class="d-inline" onclick="limpar()">Limpar</button>
+            <div class="result">
+                <span style="font-weight: 500;" id="a-set"></span>
+                <span style="font-weight: 500;" id="b-set"></span>
+                <span style="font-weight: 500;" id="universe-set"></span>
+                <div id="relacoes">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
