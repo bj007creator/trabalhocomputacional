@@ -16,11 +16,11 @@ function universe() {
         }
     }
     $("#relacoes").html("")
-    let resultA = ("A = {" + printable(A)).replace("NaN", 0) + "} ";
+    let resultA = ("A = {" + printable(A)).replace("NaN", 0) + "} "+ "|A| = " + A.length;
     document.getElementById("a-set").textContent = resultA;
-    let resultB = ("B = {" + printable(B)).replace("NaN", 0) + "} ";
+    let resultB = ("B = {" + printable(B)).replace("NaN", 0) + "} "+ " |B| = " + B.length;
     document.getElementById("b-set").textContent = resultB;
-    let resultU = ("U = {" + printable(U)).replace("NaN", 0) + "} ";
+    let resultU = ("U = {" + printable(U)).replace("NaN", 0) + "} "+ " |U| = " + U.length;
     document.getElementById("universe-set").textContent = resultU;
 }
 
@@ -95,7 +95,7 @@ function operacoes() {
                         X.push("(" + A[i] + "," + B[j] + ")");
                 }
             }
-            let result = (letra + " = {a " + operador + " b " + relacao + " " + valor + "} = {" + printable(X)).replace("NaN", 0) + "}";
+            let result = (letra + " = {a " + operador + " b " + relacao + " " + valor + "} = {" + printable(X)).replace("NaN", 0) + "}" + " |"+letra+"| = " + X.length;
             letra = nextChar(letra)
             $("#relacoes").append(`<span style="font-weight: 500;">${result}</span>`)
         } else
@@ -169,7 +169,7 @@ function caracteristicas() {
                     }
                 }
             }
-            let result = (letra + " = {a " + cA + " " + cAv + " " + eOU + " b " + cB + cBv + "} = {" + printable(X)).replace("NaN", 0) + "}";
+            let result = (letra + " = {a " + cA + " " + cAv + " " + eOU + " b " + cB + cBv + "} = {" + printable(X)).replace("NaN", 0) + "}" + " |"+letra+"| = " + X.length;
             letra = nextChar(letra)
             $("#relacoes").append(`<span style="font-weight: 500;">${result}</span>`)
         } else
